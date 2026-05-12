@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>高顿紫藤留学&背景提升智能咨询工作台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <p class="eyebrow">Gaodun Ziting Internal Advisor Tool</p>
+    <h1>高顿紫藤留学&背景提升智能咨询工作台</h1>
+    <p class="subtitle">产品匹配｜智能定校｜联网查校入口｜探需话术｜成交推进</p>
+  </div>
+  <div class="top-actions">
+    <button id="generateBtn">一键生成咨询方案</button>
+    <button id="schoolPlanBtn">生成定校方案</button>
+    <button id="resetBtn" class="ghost">清空重填</button>
+    <button id="printBtn" class="ghost">打印/保存</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="panel input-panel">
+    <div class="panel-head"><h2>学生情况输入</h2><span id="todayBadge" class="badge"></span></div>
+    <div class="case-buttons">
+      <button data-case="case1">案例1：大三商科多地硕士</button>
+      <button data-case="case2">案例2：G11英国G5本科</button>
+      <button data-case="case3">案例3：研究型硕士/博士</button>
+    </div>
+    <div class="form-grid">
+      <label>学生姓名/备注<input id="studentName" placeholder="如：李同学/家长咨询"></label>
+      <label>当前身份<select id="identity"></select></label>
+      <label>申请阶段<select id="stage"></select></label>
+      <label>当前体系<select id="system"></select></label>
+      <label>当前年级<select id="grade"></select></label>
+      <label>目标入学时间<select id="intake"></select></label>
+      <label>目标国家/地区<select id="country"></select></label>
+      <label>目标专业方向<select id="major"></select></label>
+      <label>目标院校/排名<select id="ranking"></select></label>
+      <label>已有目标学校<input id="targetSchools" placeholder="如 UCL, HKU, NUS，可不填"></label>
+      <label>当前成绩<input id="score" placeholder="GPA/均分/IB/AP/A-Level等"></label>
+      <label>语言考试<select id="languageTest"></select></label>
+      <label>语言分数<input id="languageScore" placeholder="如：雅思6.0 / 托福90 / 未考"></label>
+      <label>标化/入学考试<select id="exam"></select></label>
+      <label>是否有小分要求<select id="subscore"></select></label>
+      <label>预算区间<select id="budget"></select></label>
+      <label>咨询场景<select id="scenario"></select></label>
+    </div>
+    <div class="checkbox-group"><h3>背景经历</h3><div id="backgroundBox" class="checks"></div></div>
+    <div class="checkbox-group"><h3>当前短板</h3><div id="weaknessBox" class="checks"></div></div>
+    <div class="checkbox-group"><h3>家长关注点</h3><div id="concernBox" class="checks"></div></div>
+  </section>
+
+  <section class="panel output-panel">
+    <div class="panel-head sticky-head">
+      <h2>智能咨询方案</h2>
+      <div class="copy-actions">
+        <button data-copy="parentTalk">复制家长话术</button>
+        <button data-copy="internalAnalysis">复制内部分析</button>
+        <button data-copy="questions">复制探需问题</button>
+        <button data-copy="productPlan">复制产品组合</button>
+      </div>
+    </div>
+    <div id="output" class="output-empty"><h3>填写左侧信息后点击生成。</h3><p>会输出：产品组合、冲稳保定校思路、查校链接、名单核查、探需问题和成交话术。</p></div>
+  </section>
+</main>
+
+<section class="panel toolbox">
+  <div class="panel-head"><h2>智能定校/联网查校辅助</h2><span class="warning">本工具辅助查询，不替代院校官网最终核查</span></div>
+  <div class="school-grid">
+    <label>国家/地区<select id="toolCountry"></select></label>
+    <label>申请阶段<select id="toolStage"></select></label>
+    <label>专业关键词<input id="toolMajor" placeholder="Finance / CS / Education"></label>
+    <label>院校关键词<input id="toolSchool" placeholder="UCL / HKU / UNSW，可不填"></label>
+    <button id="buildSearchBtn">生成查校链接</button>
+  </div>
+  <div id="searchLinks" class="links-area"></div>
+</section>
+
+<section class="panel library-panel">
+  <div class="panel-head">
+    <h2>产品库搜索与筛选</h2>
+    <div class="library-filters"><input id="productSearch" placeholder="搜索产品名/产品码/国家/关键词"><select id="filterCategory"><option value="">全部类型</option></select><select id="filterCountry"><option value="">全部地区</option></select></div>
+  </div>
+  <div id="productLibrary" class="product-library"></div>
+</section>
+
+<section class="panel custom-panel">
+  <div class="panel-head"><h2>自定义补充区</h2><span class="badge">可后续维护</span></div>
+  <textarea id="customRules" placeholder="这里可以记录你后续掌握的内部名单、特殊渠道、定校规则、常用话术等。当前版本先保存在本机浏览器。"></textarea>
+  <button id="saveRulesBtn">保存补充内容</button>
+</section>
+
+<div id="toast" class="toast">已复制</div>
+<script src="script.js"></script>
+</body>
+</html>
