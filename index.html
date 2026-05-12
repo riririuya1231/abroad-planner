@@ -51,6 +51,19 @@
     <div class="checkbox-group"><h3>背景经历</h3><div id="backgroundBox" class="checks"></div></div>
     <div class="checkbox-group"><h3>当前短板</h3><div id="weaknessBox" class="checks"></div></div>
     <div class="checkbox-group"><h3>家长关注点</h3><div id="concernBox" class="checks"></div></div>
+
+    <div class="free-input-block">
+      <h3>补充已知信息｜用于提高匹配准确度</h3>
+      <p>把你从家长/学生那里拿到的细节直接贴这里：学校、GPA、课程体系、实习、科研、竞赛、夏校、下校/访校经历、目标院校、家长原话等。</p>
+      <textarea id="extraInfo" placeholder="例如：学生大三，双非财经院校，均分82，雅思6.0；有一段证券公司实习；2025暑假参加过港大商科夏校/下校活动；目标香港/英国商科硕士，家长关注排名和就业。"></textarea>
+    </div>
+
+    <div class="free-input-block">
+      <h3>客户最新回复｜用于生成下一步话术</h3>
+      <p>后续咨询中，把家长/学生的新回复粘贴这里，再点“生成下一步跟进”。</p>
+      <textarea id="clientReply" placeholder="例如：家长说想再对比一下机构 / 暑假再说 / 觉得价格高 / 想知道为什么要做背景提升 / 只想申请港前三"></textarea>
+      <button id="followupBtn" type="button">生成下一步跟进</button>
+    </div>
   </section>
 
   <section class="panel output-panel">
@@ -95,5 +108,6 @@
 
 <div id="toast" class="toast">已复制</div>
 <script src="script.js"></script>
+<script src="enhancements.js"></script>
 </body>
 </html>
